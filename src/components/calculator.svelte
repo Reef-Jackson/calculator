@@ -25,18 +25,17 @@
         document.querySelector('.result-input').value = result;
     }
 
-    // Add event listener for keydown events on the document
     document.addEventListener('keydown', (event) => {
         const key = event.key;
         const isNumeric = /^[0-9]$/.test(key);
 
         if (isNumeric || key.match(/[+\-*/.=]|Enter|Backspace|Escape/)) {
-            event.preventDefault(); // Prevent default behavior for these keys
+            event.preventDefault(); 
 
             if (key === 'Enter' || key === '=') {
                 calculateResult();
             } else if (key === 'Backspace') {
-                result = result.slice(0, -1); // Remove the last character
+                result = result.slice(0, -1);
                 updateDisplay();
             } else if (key === 'Escape') {
                 clearResult();
